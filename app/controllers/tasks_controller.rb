@@ -4,8 +4,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @tasks = Task.new
-#タスクを作るフォームのビューを作成するnew
+    @task = Task.new
   end
 
   def create
@@ -18,5 +17,4 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:title)
     end
-
 end
