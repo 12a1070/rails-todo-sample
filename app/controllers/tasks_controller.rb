@@ -15,11 +15,13 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+# タスクに割り振られているIDを見つけてタスクのインスタンス変数に代入
   end
 
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+# タスクに入力されたパラメーターをtaskのupdateアクションに渡す
     redirect_to tasks_path
   end
 
