@@ -25,6 +25,15 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+      # 該当するIDを持つタスクを見つけ。taskのインスタンスに代入
+    @task.destroy
+      # taskを削除する
+    redirect_to tasks_path
+      # indexページに遷移
+  end
+
   private
     def task_params
       params.require(:task).permit(:title)
