@@ -34,6 +34,8 @@ class TasksController < ApplicationController
       # indexページに遷移
   end
 
+
+
   private
     def task_params
       params.require(:task).permit(:title)
