@@ -11,8 +11,7 @@
       <tr>
         <td><%= task.title %></td>
         <td><%= link_to '編集', edit_task_path(task) %></td>
-        <td><%= link_to '削除', task_path(task), method: :delete %></td>
-          <%# link_toメソッドの名前を削除にして、taskパスを通じて該当するtaskを指定しmethod::deleteでDELETEメソッドを指定 %>
+        <td><%= link_to '削除', task_path(task), data: { turbo_method: :delete } %></td>
       </tr>
     <% end %>
   </tbody>
